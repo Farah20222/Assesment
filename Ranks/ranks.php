@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  * Using collection pipeline programming, calculate ranks for the given teams based on their respective scores. Same scores should be ranked equally
  * If multiple teams get the same rank, the next ranks should be skipped based on the team count.

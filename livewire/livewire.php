@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Install Alpine, tailwind and filepond using npm in laravel
  *

@@ -1,5 +1,11 @@
 <?php
 
+
+/*
+ * Download the sample sql dataset from https://www.mysqltutorial.org/wp-content/uploads/2018/03/mysqlsampledatabase.zip
+ * Write controllers to find the first customer who spent more money on orders & the first customer who has highest number of orders.
+ * Use Eloquent, Relationships, SQL Query Optimisation methods. Code execution time and the memory used would be assessed here.
+ */
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -8,6 +14,7 @@ use App\Models\Customer;
 use Illuminate\Support\Facades\DB;
 class OrdersController extends Controller
 {
+   // http://localhost:8000/first-customer-by-spent-amount 
     public function firstCustomerBySpentAmount()
     {
         $customer = Customer::select('customers.customerName', DB::raw('SUM(orderdetails.quantityOrdered * orderdetails.priceEach) as total_spent'))
@@ -24,7 +31,7 @@ class OrdersController extends Controller
 
     /**
      * Find the first customer who has the highest number of orders.
-     *
+     * http://localhost:8000/first-customer-by-orders
      * @return \Illuminate\Http\Response
      */
     public function firstCustomerByOrders()
