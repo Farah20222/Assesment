@@ -41,7 +41,7 @@ $employees = collect([
             ],
         ]);
 
-    
+        // Method mvp
 $mvp = $employees->max(function ($employee) {
   return array_reduce($employee['sales'], function ($total, $sale) {
       return $total + $sale['order_total'];
